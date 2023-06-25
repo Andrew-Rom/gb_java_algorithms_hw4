@@ -134,6 +134,8 @@ public class RedBlackTree {
     }
 
 
+    // вывод дерева с урока
+
     private class PrintNode {
         Node node;
         String str;
@@ -151,6 +153,7 @@ public class RedBlackTree {
             this.str = node.toString();
         }
     }
+
     public void print() {
         int maxDepth = maxDepth() + 3;
         int nodeCount = nodeCount(root, 0);
@@ -214,6 +217,7 @@ public class RedBlackTree {
             System.out.println();
         }
     }
+
     private void printLines(List<List<PrintNode>> list, int i, int j, int i2, int j2) {
         if (i2 > i) // Идём вниз
         {
@@ -238,9 +242,11 @@ public class RedBlackTree {
             }
         }
     }
+
     public int maxDepth() {
         return maxDepth2(0, root);
     }
+
     private int maxDepth2(int depth, Node node) {
         depth++;
         int left = depth;
@@ -251,6 +257,7 @@ public class RedBlackTree {
             right = maxDepth2(depth, node.rightChild);
         return left > right ? left : right;
     }
+
     private int nodeCount(Node node, int count) {
         if (node != null) {
             count++;
